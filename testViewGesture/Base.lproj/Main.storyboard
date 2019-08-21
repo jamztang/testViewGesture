@@ -15,29 +15,24 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JJ3-uk-C1S">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="432"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JJ3-uk-C1S">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Fv-zE-IoR">
-                                        <rect key="frame" x="87" y="152" width="240" height="128"/>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Fv-zE-IoR">
+                                        <rect key="frame" x="0.0" y="0.0" width="2035" height="1290"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstItem="1Fv-zE-IoR" firstAttribute="centerX" secondItem="JJ3-uk-C1S" secondAttribute="centerX" id="DJh-m3-iyV"/>
-                                    <constraint firstAttribute="trailing" secondItem="1Fv-zE-IoR" secondAttribute="trailing" constant="87" id="HNu-jw-Kmr"/>
-                                    <constraint firstItem="1Fv-zE-IoR" firstAttribute="leading" secondItem="7Kk-4u-EiU" secondAttribute="leading" constant="87" id="SzM-ZF-4x2"/>
-                                    <constraint firstItem="1Fv-zE-IoR" firstAttribute="top" secondItem="7Kk-4u-EiU" secondAttribute="top" constant="152" id="eYc-QR-frm"/>
-                                    <constraint firstAttribute="bottom" secondItem="1Fv-zE-IoR" secondAttribute="bottom" constant="152" id="eie-lJ-RP8"/>
-                                    <constraint firstItem="1Fv-zE-IoR" firstAttribute="centerY" secondItem="JJ3-uk-C1S" secondAttribute="centerY" id="uKP-Ck-XXD"/>
-                                </constraints>
                                 <viewLayoutGuide key="contentLayoutGuide" id="8Qb-Yc-gpH"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="7Kk-4u-EiU"/>
                             </scrollView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pch-zL-Kqx" customClass="TrackingView" customModule="testViewGesture" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="464" width="414" height="432"/>
-                                <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Pch-zL-Kqx" customClass="TrackingView" customModule="testViewGesture" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="1" green="0.58431372550000005" blue="0.0" alpha="0.20351012323943662" colorSpace="custom" customColorSpace="sRGB"/>
                                 <gestureRecognizers/>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="ax3-Zf-wSB" appends="YES" id="eQf-b2-ba8"/>
@@ -45,20 +40,12 @@
                             </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <constraints>
-                            <constraint firstItem="JJ3-uk-C1S" firstAttribute="height" secondItem="Pch-zL-Kqx" secondAttribute="height" id="1FN-Pc-azY"/>
-                            <constraint firstItem="JJ3-uk-C1S" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="2nT-Ko-UbQ"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="JJ3-uk-C1S" secondAttribute="bottom" constant="430" id="395-Hf-lmA"/>
-                            <constraint firstItem="Pch-zL-Kqx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="7hp-Ee-8gO"/>
-                            <constraint firstItem="JJ3-uk-C1S" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="firstBaseline" id="Nbi-nO-7eT"/>
-                            <constraint firstItem="Pch-zL-Kqx" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="bl1-Pu-30b"/>
-                            <constraint firstItem="JJ3-uk-C1S" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="mfJ-Cm-eef"/>
-                            <constraint firstAttribute="bottom" secondItem="Pch-zL-Kqx" secondAttribute="bottom" id="r1a-aw-dT6"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="indicatorView" destination="1Fv-zE-IoR" id="M4o-4c-6BK"/>
                         <outlet property="panGestureRecognizer" destination="ax3-Zf-wSB" id="hCf-75-lkr"/>
+                        <outlet property="scrollView" destination="JJ3-uk-C1S" id="XYm-AH-nV3"/>
                         <outlet property="trackingView" destination="Pch-zL-Kqx" id="51j-AN-Rup"/>
                     </connections>
                 </viewController>
