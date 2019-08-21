@@ -10,11 +10,20 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet var panGestureRecognizer: UIPanGestureRecognizer!
+    @IBOutlet weak var trackingView: TrackingView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        panGestureRecognizer.delegate = self
+        panGestureRecognizer.addTarget(self, action: #selector(handlePanGesture(_:)))
     }
-
-
+    
+    @objc func handlePanGesture(_ recognizer: UIPanGestureRecognizer) {
+        Swift.print("pan \(recognizer.location(in: trackingView))")
+    }
 }
 
+extension ViewController: UIGestureRecognizerDelegate {
+    
+}
