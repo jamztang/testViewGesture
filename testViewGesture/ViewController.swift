@@ -17,6 +17,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        trackingView.delegate = self
         scrollView.delegate = self
         scrollView.contentSize = indicatorView.bounds.size
         scrollView.minimumZoomScale = 0.1
@@ -62,6 +63,16 @@ class ViewController: UIViewController {
 
 extension ViewController: UIGestureRecognizerDelegate {
     
+}
+
+extension ViewController: TrackingViewDelegate {
+    func trackingViewDidLeftClick(_ trackingView: UIView) {
+        Swift.print("trackingViewDidLeftClick")
+    }
+    func trackingViewDidRightClick(_ trackingView: UIView) {
+        Swift.print("trackingViewDidRightClick")
+//        UIMenuController.shared.showMenu(from: self.trackingView, rect: CGRect(x: 100, y: 100, width: 100, height: 100))
+    }
 }
 
 extension ViewController: UIScrollViewDelegate {
