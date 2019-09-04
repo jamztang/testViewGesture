@@ -9,8 +9,8 @@
 import UIKit
 
 protocol TrackingViewDelegate: class {
-    func trackingViewDidLeftClick(_ trackingView: UIView)
-    func trackingViewDidRightClick(_ trackingView: UIView)
+    func trackingViewDidLeftClick(_ trackingView: TrackingView)
+    func trackingViewDidRightClick(_ trackingView: TrackingView)
 }
 
 class TrackingView: UIView {
@@ -18,6 +18,7 @@ class TrackingView: UIView {
     weak var delegate: TrackingViewDelegate?
     
     private var touchDidBegin: Bool = false
+    private(set) var touches: Set<UITouch> = Set()
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
@@ -26,6 +27,7 @@ class TrackingView: UIView {
 
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesEnded(touches, with: event)
+        self.touches = touches
         guard let delegate = delegate else {
             return
         }

@@ -15,9 +15,11 @@ class ViewController: UIViewController {
     @IBOutlet weak var trackingView: TrackingView!
     @IBOutlet weak var indicatorView: UIView!
     var rightClickGestureRecognizer: RightClickGestureRecognizer!
+    let menu = UIMenuController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+//
         trackingView.delegate = self
         scrollView.delegate = self
         scrollView.contentSize = indicatorView.bounds.size
@@ -34,8 +36,22 @@ class ViewController: UIViewController {
         if let pinchGesture = scrollView.pinchGestureRecognizer {
             trackingView.addGestureRecognizer(pinchGesture)
         }
-        rightClickGestureRecognizer = RightClickGestureRecognizer(target: self, action: #selector(handleRightClickGesture))
-        trackingView.addGestureRecognizer(rightClickGestureRecognizer)
+        
+//        rightClickGestureRecognizer = RightClickGestureRecognizer(target: self, action: #selector(handleRightClickGesture))
+//        trackingView.addGestureRecognizer(rightClickGestureRecognizer)
+
+        let special1 = UIMenuItem(title: "Special", action: #selector(special))
+        menu.menuItems = [special1]
+        
+        becomeFirstResponder()
+    }
+    
+    override var canBecomeFirstResponder: Bool {
+        return true
+    }
+    
+    @objc func special() {
+        Swift.print("special")
     }
 
     @objc
@@ -71,12 +87,16 @@ extension ViewController: UIGestureRecognizerDelegate {
 }
 
 extension ViewController: TrackingViewDelegate {
-    func trackingViewDidLeftClick(_ trackingView: UIView) {
+    func trackingViewDidLeftClick(_ trackingView: TrackingView) {
         Swift.print("trackingViewDidLeftClick")
     }
-    func trackingViewDidRightClick(_ trackingView: UIView) {
+    func trackingViewDidRightClick(_ trackingView: TrackingView) {
         Swift.print("trackingViewDidRightClick")
-//        UIMenuController.shared.showMenu(from: self.trackingView, rect: CGRect(x: 100, y: 100, width: 100, height: 100))
+        guard let touch = trackingView.touches.first else {
+            return
+        }
+        let location = touch.location(in: trackingView)
+        menu.showMenu(from: trackingView, rect: CGRect(x: location.x, y: location.y, width: 0, height: 0))
     }
 }
 
