@@ -16,6 +16,7 @@
 		1A24399B230D20B60049ADD3 /* testViewGestureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A24399A230D20B60049ADD3 /* testViewGestureTests.swift */; };
 		1A2439A6230D20B60049ADD3 /* testViewGestureUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2439A5230D20B60049ADD3 /* testViewGestureUITests.swift */; };
 		1A2439B4230D23990049ADD3 /* TrackingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2439B3230D23990049ADD3 /* TrackingView.swift */; };
+		1A287A55231E60B600426B9F /* RightClickGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A287A54231E60B500426B9F /* RightClickGestureRecognizer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 		1A2439A7230D20B60049ADD3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1A2439B3230D23990049ADD3 /* TrackingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackingView.swift; sourceTree = "<group>"; };
 		1A2439B5230D28460049ADD3 /* testViewGesture.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = testViewGesture.entitlements; sourceTree = "<group>"; };
+		1A287A54231E60B500426B9F /* RightClickGestureRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightClickGestureRecognizer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +110,7 @@
 				1A243987230D20B50049ADD3 /* ViewController.swift */,
 				1A243989230D20B50049ADD3 /* Main.storyboard */,
 				1A2439B3230D23990049ADD3 /* TrackingView.swift */,
+				1A287A54231E60B500426B9F /* RightClickGestureRecognizer.swift */,
 				1A24398C230D20B60049ADD3 /* Assets.xcassets */,
 				1A24398E230D20B60049ADD3 /* LaunchScreen.storyboard */,
 				1A243991230D20B60049ADD3 /* Info.plist */,
@@ -268,6 +271,7 @@
 				1A243984230D20B50049ADD3 /* AppDelegate.swift in Sources */,
 				1A243986230D20B50049ADD3 /* SceneDelegate.swift in Sources */,
 				1A2439B4230D23990049ADD3 /* TrackingView.swift in Sources */,
+				1A287A55231E60B600426B9F /* RightClickGestureRecognizer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

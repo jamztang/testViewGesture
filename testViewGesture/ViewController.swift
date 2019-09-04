@@ -14,6 +14,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var trackingView: TrackingView!
     @IBOutlet weak var indicatorView: UIView!
+    var rightClickGestureRecognizer: RightClickGestureRecognizer!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,18 +23,19 @@ class ViewController: UIViewController {
         scrollView.contentSize = indicatorView.bounds.size
         scrollView.minimumZoomScale = 0.1
         scrollView.maximumZoomScale = 3.0
-//        scrollView.zoomScale = 0.1
 
         panGestureRecognizer.delegate = self
         scrollView.panGestureRecognizer.addTarget(self, action: #selector(handleScrollGesture))
         scrollView.pinchGestureRecognizer?.addTarget(self, action: #selector(handlePinchGesture))
-    
+
 //        let hover = UIHoverGestureRecognizer(target: self, action: #selector(hovering(_:)))
 //        trackingView.addGestureRecognizer(hover)
         trackingView.addGestureRecognizer(scrollView.panGestureRecognizer)
         if let pinchGesture = scrollView.pinchGestureRecognizer {
             trackingView.addGestureRecognizer(pinchGesture)
         }
+        rightClickGestureRecognizer = RightClickGestureRecognizer(target: self, action: #selector(handleRightClickGesture))
+        trackingView.addGestureRecognizer(rightClickGestureRecognizer)
     }
 
     @objc
@@ -58,6 +60,9 @@ class ViewController: UIViewController {
     }
     @objc func handlePinchGesture(_ recognizer: UIPanGestureRecognizer) {
         Swift.print("pinch \(recognizer.location(in: trackingView))")
+    }
+    @objc func handleRightClickGesture(_ recognizer: RightClickGestureRecognizer) {
+        Swift.print("rightClick")
     }
 }
 
